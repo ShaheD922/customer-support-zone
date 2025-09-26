@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import "./App.css";
 import CustomerTickets from "./components/CustomerTickets";
 import TasksSection from "./components/TasSection";
@@ -67,12 +67,16 @@ function App() {
           <Resolved resolved={resolved} />
         </div>
 
+
+
         <div className="flex md:grid flex-col-reverse  md:grid-cols-12 justify-between w-full mt-11 gap-2 ">
           <div className="md:col-span-9">
-            <CustomerTickets
+          <Suspense fallback={<p>Loading To Customer Tickets... </p>}>
+  <CustomerTickets
               ticketss={tick}
               handleCardClick={handleCardClick}
             />
+</Suspense>
           </div>
           <div className="md:col-span-3">
             <TasksSection
