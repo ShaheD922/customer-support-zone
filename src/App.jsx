@@ -39,7 +39,7 @@ function App() {
   const handleCardClick = (card) => {
     setInProgress(inProgress + 1);
     setTaskSection([...taskSection, card]);
-    toast("In-Progress!");
+    toast("In-Progress..!");
   };
 
   const handleResolveTask = (card) => {

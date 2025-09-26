@@ -2,7 +2,7 @@ import React from 'react';
 
 const TaskCard = ({task, handleResolveTask }) => {
     return (
-        <div className="border border-gray-300 rounded-2xl card w-full bg-base-100 shadow-sm p-2.5 my-5">
+        <div className="border border-gray-300 rounded-2xl card w-full bg-base-100 shadow-sm p-2.5 my-5 cursor-pointer">
       <div className="card-body ml-2">
         <h2 className="md:text-xl font-semibold"> {task.title} </h2>
         <div className="ml-5 my-6">

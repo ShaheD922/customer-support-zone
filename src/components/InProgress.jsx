@@ -9,7 +9,7 @@ const InProgress = ({ inProgress }) => {
       >
         <img className="h-full" src={imgLeft} alt="" />
 
-        <div className="w-full grid items-center justify-center text-2xl font-bold  text-center text-white">
+        <div className="w-full grid items-center justify-center text-xl md:text-2xl font-bold  text-center text-white">
           <p>In-Progress</p>
           <p> {inProgress} </p>
         </div>
