@@ -1,16 +1,30 @@
-# React + Vite
+#Customer-Support-Zone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## What is JSX, and why is it used?
+####Ans: JSX stands for javaScript .JSX is a way to write HTML-like code inside JavaScript, 
+mainly it is used in React to show what the user interface should look like.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##What is the difference between State and Props?
+####Ans:  State : It is updated with setState or useState.
+                  Data that a component can change.
 
-## React Compiler
+          Props: It is immutable . Data get its parent and cannot it changed.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+##What is the useState hook, and how does it work?
+####Ans : Basically useState lets our component remember value and update the UI when those value changes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##How can you share state between components in React?
+####Ans :  Share state between components in react..
+first Lift state up for few components.
+second Use Context for many components.
+third Use libraries for large apps.
+
+
+
+##How is event handling done in React?
+####Ans:React handles events by passing functions to camelCase event props like onClick instead of using HTML strings.
+
+
+
