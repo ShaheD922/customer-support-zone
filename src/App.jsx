@@ -10,31 +10,28 @@ import Footer from "./components/Footer";
 
 import Container from "./components/Container";
 
-
-
-import { toast,ToastContainer } from "react-toastify"
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-
   const [inProgress, setInProgress] = useState(0);
   const [resolved, setResolved] = useState(0);
   const [tick, setTick] = useState([]);
   const [taskSection, setTaskSection] = useState([]);
   const [resolvedData, setResolvedData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     async function fetchTickets() {
       const res = await fetch("/Details.json");
       const data = await res.json();
-      console.log("fetch data",data);
-      
+      console.log("fetch data", data);
+      setLoading(false);
       setTick(data);
     }
     fetchTickets();
   }, []);
-
-
 
   const handleCardClick = (card) => {
     setInProgress(inProgress + 1);
@@ -67,16 +64,16 @@ function App() {
           <Resolved resolved={resolved} />
         </div>
 
-
-
         <div className="flex md:grid flex-col-reverse  md:grid-cols-12 justify-between w-full mt-11 gap-2 ">
           <div className="md:col-span-9">
-          <Suspense fallback={<p>Loading To Customer Tickets... </p>}>
-  <CustomerTickets
-              ticketss={tick}
-              handleCardClick={handleCardClick}
-            />
-</Suspense>
+            {loading ? (
+              "Loading"
+            ) : (
+              <CustomerTickets
+                ticketss={tick}
+                handleCardClick={handleCardClick}
+              />
+            )}
           </div>
           <div className="md:col-span-3">
             <TasksSection
@@ -86,10 +83,8 @@ function App() {
             <ResolvedSection resolvedData={resolvedData} />
           </div>
         </div>
-
-        
       </main>
-      
+
       <Footer />
       <ToastContainer
         position="top-right"
@@ -113,10 +108,4 @@ export default App;
 
 
 
-
-
-
-
-
-
-// SM
+// sm
