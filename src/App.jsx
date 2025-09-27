@@ -82,7 +82,8 @@ function App() {
             />
             <ResolvedSection resolvedData={resolvedData} />
           </div>
-        </div>
+  
+      </div>
       </main>
 
       <Footer />
